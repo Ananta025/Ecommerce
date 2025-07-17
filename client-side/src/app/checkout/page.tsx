@@ -9,7 +9,7 @@ import toast from "react-hot-toast";
 export default function CheckoutPage() {
   const [loading, setLoading] = useState(false);
   const [invoiceType, setInvoiceType] = useState("A4");
-  const [error, setError] = useState<string | null>(null);
+  const [, setError] = useState<string | null>(null);
   const items = useCartStore((s) => s.items);
   const clear = useCartStore((s) => s.clear);
   const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
