@@ -11,7 +11,7 @@ export default function SuccessPage() {
       <h1 className="text-3xl font-bold mb-2 text-forest-accent">Thank You for Your Order!</h1>
       <p className="text-forest-soft mb-8">Your order was placed successfully. We’ve sent a confirmation email with your invoice and order details.</p>
       {orderId && (
-        <Button href={`http://localhost:5000/api/orders/${orderId}/invoice?type=A4`} variant="secondary">
+        <Button href={`http://localhost:5000/api/orders/${orderId}/invoice?type=A4`}>
           Download PDF Invoice
         </Button>
       )}
