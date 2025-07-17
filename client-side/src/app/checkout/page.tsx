@@ -30,7 +30,7 @@ export default function CheckoutPage() {
       const order = await createOrder(orderData);
       clear();
       toast.success("Order placed successfully!");
-      router.push(`/success?orderId=${order._id}`);
+      router.push(`/success?orderId=${order._id}&invoiceType=${invoiceType}`);
     } catch (err: unknown) {
       setError((err as Error).message || "Order failed");
       toast.error((err as Error).message || "Order failed");

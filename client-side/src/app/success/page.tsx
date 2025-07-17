@@ -6,11 +6,12 @@ import { Suspense } from "react";
 function SuccessContent() {
   const params = useSearchParams();
   const orderId = params.get('orderId');
+  const invoiceType = params.get('invoiceType') || 'A4';
   return (
     <>
       {orderId && (
-        <Button href={`http://localhost:5000/api/orders/${orderId}/invoice?type=A4`}>
-          Download PDF Invoice
+        <Button href={`http://localhost:5000/api/orders/${orderId}/invoice?type=${invoiceType.toLowerCase()}`}>
+          Download {invoiceType} PDF Invoice
         </Button>
       )}
       <Button href="/" className="mt-4">
