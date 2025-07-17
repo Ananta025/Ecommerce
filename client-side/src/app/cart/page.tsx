@@ -16,7 +16,7 @@ export default function CartPage() {
           items.map((item) => <CartItem key={item.id} item={item} />)
         )}
       </div>
-      <div className="flex items-center justify-between border-t border-forest-soft pt-6 mb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-t border-forest-soft pt-6 mb-6">
         <span className="font-semibold text-lg">Subtotal</span>
         <span className="text-xl font-bold text-forest-accent">₹{subtotal}</span>
       </div>

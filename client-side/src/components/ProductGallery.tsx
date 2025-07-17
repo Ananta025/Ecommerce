@@ -12,7 +12,7 @@ export default function ProductGallery({ images, title }: ProductGalleryProps) {
   return (
     <div className="flex flex-col gap-4">
       {/* Main Image */}
-      <div className="rounded-2xl overflow-hidden shadow-lg bg-forest-soft aspect-square relative">
+      <div className="rounded-2xl overflow-hidden shadow-lg bg-forest-soft aspect-square relative w-full max-w-md mx-auto">
         <Image
           src={images[mainIdx]}
           alt={title}
@@ -24,19 +24,19 @@ export default function ProductGallery({ images, title }: ProductGalleryProps) {
       </div>
 
       {/* Thumbnails */}
-      <div className="flex gap-3 justify-center">
+      <div className="flex gap-3 justify-center flex-wrap">
         {images.map((img, idx) => (
           <button
             key={img}
             onClick={() => setMainIdx(idx)}
-            className={`rounded-xl overflow-hidden border-2 transition-all duration-200 aspect-square w-16 h-16 relative ${mainIdx === idx ? 'border-forest-accent' : 'border-transparent hover:border-forest-secondary'}`}
+            className={`rounded-xl overflow-hidden border-2 transition-all duration-200 aspect-square w-12 h-12 sm:w-16 sm:h-16 relative ${mainIdx === idx ? 'border-forest-accent' : 'border-transparent hover:border-forest-secondary'}`}
             aria-label={`Show image ${idx + 1}`}
           >
             <Image
               src={img}
               alt={`${title} thumbnail ${idx + 1}`}
               fill
-              sizes="64px"
+              sizes="48px"
               className="object-cover"
             />
           </button>

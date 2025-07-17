@@ -12,7 +12,7 @@ export default function ProductCard({ product }: { product: Product }) {
   return (
     <Link
       href={`/product/${product._id}`}
-      className="block max-w-[250px] h-full rounded-xl shadow-md bg-white hover:scale-105 hover:bg-forest-light transition-all duration-300 overflow-hidden group"
+      className="block w-full max-w-xs sm:max-w-[250px] h-full rounded-xl shadow-md bg-white hover:scale-105 hover:bg-forest-light transition-all duration-300 overflow-hidden group"
       aria-label={`View details for ${product.name}`}
     >
       <div className="aspect-square bg-forest-soft flex items-center justify-center overflow-hidden relative">

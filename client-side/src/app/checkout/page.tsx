@@ -40,9 +40,9 @@ export default function CheckoutPage() {
   }
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-10">
+    <div className="max-w-2xl mx-auto px-2 sm:px-4 py-8 sm:py-10">
       <h1 className="text-2xl font-bold mb-6">Checkout</h1>
-      <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow p-6 flex flex-col gap-6">
+      <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow p-4 sm:p-6 flex flex-col gap-6">
         <div className="flex flex-col gap-2">
           <label htmlFor="name" className="font-medium">Name</label>
           <input id="name" name="name" type="text" required className="rounded-lg border border-forest-soft px-4 py-2 focus:ring-2 focus:ring-forest-primary" />
@@ -69,7 +69,7 @@ export default function CheckoutPage() {
           </select>
         </div>
         {/* Order Summary */}
-        <div className="bg-forest-soft/40 rounded-lg p-4">
+        <div className="bg-forest-soft/40 rounded-lg p-3 sm:p-4">
           <h2 className="font-semibold mb-2">Order Summary</h2>
           <ul className="text-sm mb-2">
             {items.map(item => (
