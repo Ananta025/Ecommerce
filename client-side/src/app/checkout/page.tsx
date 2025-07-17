@@ -75,13 +75,13 @@ export default function CheckoutPage() {
             {items.map(item => (
               <li key={item.id} className="flex justify-between">
                 <span>{item.name} x{item.quantity}</span>
-                <span>${(item.price * item.quantity).toFixed(2)}</span>
+                <span>₹{(item.price * item.quantity).toFixed(2)}</span>
               </li>
             ))}
           </ul>
           <div className="flex justify-between font-bold text-forest-accent">
             <span>Subtotal</span>
-            <span>${subtotal}</span>
+            <span>₹{subtotal}</span>
           </div>
         </div>
         <Button type="submit" disabled={loading}>

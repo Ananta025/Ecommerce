@@ -13,27 +13,27 @@ await Order.deleteMany({});
 const sampleProducts = [
   {
     name: 'Forest Mug',
-    price: 18,
+    price: 189.99,
     image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80',
   },
   {
     name: 'Eco Tote Bag',
-    price: 25,
+    price: 259.99,
     image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80',
   },
   {
     name: 'Bamboo Bottle',
-    price: 30,
+    price: 306.99,
     image: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80',
   },
   {
     name: 'Leaf Notebook',
-    price: 12,
+    price: 125.99,
     image: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80',
   },
   {
     name: 'Wooden Sunglasses',
-    price: 45,
+    price: 459.99,
     image: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80',
   },
 ];

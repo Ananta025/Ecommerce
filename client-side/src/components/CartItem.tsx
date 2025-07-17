@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useCartStore } from "../lib/cartStore";
 
 type CartItemType = {
-  id: number;
+  id: string;
   name: string;
   price: number;
   image: string;
@@ -33,7 +33,7 @@ export default function CartItem({ item }: { item: CartItemType }) {
       {/* Title + Price */}
       <div className="flex-1">
         <div className="font-semibold text-forest-accent text-lg truncate">{item.name}</div>
-        <div className="text-forest-secondary font-bold">${item.price.toFixed(2)}</div>
+        <div className="text-forest-secondary font-bold">₹{item.price.toFixed(2)}</div>
       </div>
 
       {/* Quantity Controls */}

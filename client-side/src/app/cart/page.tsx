@@ -18,7 +18,7 @@ export default function CartPage() {
       </div>
       <div className="flex items-center justify-between border-t border-forest-soft pt-6 mb-6">
         <span className="font-semibold text-lg">Subtotal</span>
-        <span className="text-xl font-bold text-forest-accent">${subtotal}</span>
+        <span className="text-xl font-bold text-forest-accent">₹{subtotal}</span>
       </div>
       <Button href="/checkout" className="w-full">Proceed to Checkout</Button>
     </div>

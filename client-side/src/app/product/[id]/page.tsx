@@ -59,7 +59,7 @@ export default function ProductPage() {
       {/* Product Info */}
       <div className="flex flex-col gap-6">
         <h1 className="text-3xl font-bold text-forest-accent">{product.name}</h1>
-        <div className="text-2xl font-bold text-forest-secondary">${product.price}</div>
+        <div className="text-2xl font-bold text-forest-secondary">₹{product.price}</div>
         <div className="text-sm font-medium">
           <span className="text-green-600">In Stock</span>
         </div>

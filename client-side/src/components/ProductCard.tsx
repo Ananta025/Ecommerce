@@ -26,7 +26,7 @@ export default function ProductCard({ product }: { product: Product }) {
       </div>
       <div className="p-4 flex flex-col gap-2">
         <h3 className="font-semibold text-lg text-forest-accent truncate">{product.name}</h3>
-        <div className="text-forest-secondary font-bold text-base">${product.price}</div>
+        <div className="text-forest-secondary font-bold text-base">₹{product.price}</div>
         <button
           className="mt-2 w-full rounded-lg bg-gray-200 text-black py-1.5 font-medium hover:bg-gray-300 transition-colors"
           type="button"
