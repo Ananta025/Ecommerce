@@ -2,6 +2,7 @@
 import Button from "../../components/Button";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
+import { getApiBaseUrl } from "../../lib/utils";
 
 function SuccessContent() {
   const params = useSearchParams();
@@ -10,7 +11,7 @@ function SuccessContent() {
   return (
     <>
       {orderId && (
-        <Button href={`http://localhost:5000/api/orders/${orderId}/invoice?type=${invoiceType.toLowerCase()}`}>
+        <Button href={`${getApiBaseUrl()}/api/orders/${orderId}/invoice?type=${invoiceType.toLowerCase()}`}>
           Download {invoiceType} PDF Invoice
         </Button>
       )}
