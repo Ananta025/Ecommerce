@@ -6,7 +6,7 @@ import { useCartStore } from "../lib/cartStore";
 
 type CartItemType = {
   id: number;
-  title: string;
+  name: string;
   price: number;
   image: string;
   quantity: number;
@@ -22,7 +22,7 @@ export default function CartItem({ item }: { item: CartItemType }) {
       <div className="w-20 h-20 rounded-lg overflow-hidden bg-forest-soft flex items-center justify-center">
       <Image
         src={item.image || "/placeholder.png"}
-        alt={item.title}
+        alt={item.name}
         width={80}
         height={80}
         className="object-contain w-full h-full"
@@ -32,7 +32,7 @@ export default function CartItem({ item }: { item: CartItemType }) {
 
       {/* Title + Price */}
       <div className="flex-1">
-        <div className="font-semibold text-forest-accent text-lg truncate">{item.title}</div>
+        <div className="font-semibold text-forest-accent text-lg truncate">{item.name}</div>
         <div className="text-forest-secondary font-bold">${item.price.toFixed(2)}</div>
       </div>
 
