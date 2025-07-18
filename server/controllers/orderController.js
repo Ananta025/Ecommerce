@@ -25,6 +25,7 @@ export const getInvoice = async (req, res) => {
     });
     res.send(pdfBuffer);
   } catch (err) {
+    console.error('Error generating invoice:', err);
     res.status(500).json({ error: 'Server error' });
   }
 };
