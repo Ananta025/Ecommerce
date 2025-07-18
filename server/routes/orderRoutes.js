@@ -3,6 +3,6 @@ import { createOrder, getInvoice } from '../controllers/orderController.js';
 
 const router = express.Router();
 router.post('/', createOrder);
-router.get('/:id/invoice', getInvoice);
+router.get('/api/:id/invoice', getInvoice);
 
 export default router;
