@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Invoice - A4</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 6mm; /* reduced default PDF margin */
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      font-size: 12px;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+    }
+
+    .container {
+      width: 100%;
+      padding: 6mm;
+      box-sizing: border-box;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .company-info {
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .invoice-title {
+      font-size: 18px;
+      font-weight: bold;
+      text-align: right;
+    }
+
+    .info-table,
+    .items-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 6px;
+    }
+
+    .info-table td {
+      padding: 2px 3px;
+      font-size: 11px;
+    }
+
+    .items-table th,
+    .items-table td {
+      border: 1px solid #ccc;
+      padding: 4px;
+      font-size: 11px;
+    }
+
+    .items-table th {
+      background: #f4f4f4;
+      font-weight: 600;
+    }
+
+    .totals {
+      text-align: right;
+      font-size: 11px;
+      margin-top: 6px;
+    }
+
+    .totals div {
+      margin: 2px 0;
+    }
+
+    .footer {
+      margin-top: 8px;
+      text-align: center;
+      font-size: 10px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="company-info">
+        <strong>{{companyName}}</strong><br>
+        {{companyAddress}}<br>
+        Phone: {{companyPhone}}<br>
+        GSTIN: {{companyGSTIN}}
+      </div>
+      <div class="invoice-title">INVOICE</div>
+    </div>
+
+    <table class="info-table">
+      <tr>
+        <td><strong>Bill No:</strong> {{billNo}}</td>
+        <td><strong>Date:</strong> {{date}}</td>
+      </tr>
+      <tr>
+        <td><strong>Customer:</strong> {{customerName}}</td>
+        <td><strong>Payment Mode:</strong> {{paymentMode}}</td>
+      </tr>
+      <tr>
+        <td colspan="2"><strong>Address:</strong> {{customerAddress}}</td>
+      </tr>
+    </table>
+
+    <table class="items-table">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Qty</th>
+          <th>Price</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each items}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{quantity}}</td>
+          <td>₹{{price}}</td>
+          <td>₹{{subtotal}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+    <div class="totals">
+      {{#if discount}}<div>Discount: ₹{{discount}}</div>{{/if}}
+      {{#if cgst}}<div>CGST: ₹{{cgst}}</div>{{/if}}
+      {{#if sgst}}<div>SGST: ₹{{sgst}}</div>{{/if}}
+      <div><strong>Total: ₹{{total}}</strong></div>
+      <div>Amount Paid: ₹{{amountPaid}}</div>
+      <div>Cash Tendered: ₹{{cashTendered}}</div>
+    </div>
+
+    <div class="footer">
+      Thank you for your business!<br>
+      <span>E &amp; O E</span>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Invoice - Thermal</title>
+  <style>
+    body {
+      font-family: monospace, 'Courier New', Courier;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 76mm; /* Slightly narrower than full 80mm to prevent cut-off */
+      margin: 0 auto;
+      padding: 4px;
+    }
+    .header {
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 6px;
+    }
+    .company-info {
+      font-size: 12px;
+      text-align: center;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    .info {
+      margin: 2px 0;
+      font-size: 11px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+      margin-top: 4px;
+    }
+    th, td {
+      border: 1px dashed #000;
+      padding: 2px 4px;
+      text-align: left;
+      word-break: break-word;
+    }
+    th {
+      background: #f0f0f0;
+      font-weight: bold;
+    }
+    .totals {
+      font-size: 12px;
+      margin-top: 4px;
+      text-align: right;
+    }
+    .totals div {
+      margin: 2px 0;
+    }
+    .footer {
+      margin-top: 8px;
+      text-align: center;
+      font-size: 11px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">INVOICE</div>
+
+    <div class="company-info">
+      {{companyName}}<br>
+      {{companyAddress}}<br>
+      Ph: {{companyPhone}}<br>
+      GSTIN: {{companyGSTIN}}
+    </div>
+
+    <div class="info">Bill No: {{billNo}}</div>
+    <div class="info">Date: {{date}}</div>
+    <div class="info">Customer: {{customerName}}</div>
+    <div class="info">Payment: {{paymentMode}}</div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Qty</th>
+          <th>₹</th>
+          <th>Sub</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each items}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{quantity}}</td>
+          <td>{{price}}</td>
+          <td>{{subtotal}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+    <div class="totals">
+      {{#if discount}}<div>Discount: ₹{{discount}}</div>{{/if}}
+      {{#if cgst}}<div>CGST: ₹{{cgst}}</div>{{/if}}
+      {{#if sgst}}<div>SGST: ₹{{sgst}}</div>{{/if}}
+      <div><strong>Total: ₹{{total}}</strong></div>
+      <div>Paid: ₹{{amountPaid}}</div>
+      <div>Cash: ₹{{cashTendered}}</div>
+    </div>
+
+    <div class="footer">E &amp; O E</div>
+  </div>
+</body>
+</html>

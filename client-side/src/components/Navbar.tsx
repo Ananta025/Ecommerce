@@ -42,7 +42,7 @@ export default function Navbar() {
             <span className="sr-only">Cart</span>
             <svg width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="inline-block"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h7.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
             {count > 0 && (
-              <span className="absolute -top-2 -right-2 bg-forest-accent text-white text-xs rounded-full px-1.5 py-0.5 font-bold border-2 border-forest-background">{count}</span>
+              <span className="absolute -top-2 -right-2 bg-forest-accent text-forest-background text-xs rounded-full px-1.5 py-0.5 font-bold border-2 border-forest-background">{count}</span>
             )}
           </Link>
         </div>
